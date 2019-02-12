@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# script processes log file and extracts only part of log
+# according to the time interval specified by user.
+# Input arguments are: file_name, start and end of the time interval.
+
+# make sure about the correct input
+if [ -z $1 ] ||  [ -z $2 ] || [ -z $3 ] || [ -z $4 ] || [ -z $5 ]
+then
+        echo "Usage: script_name    path/to/log_file   start_DATE(pattern: Jan 21)    end_DATE(pattern: Jan 21)" 
+
+else
+        FILE=$1
+	DATE1=$(echo "$2 $3")
+	DATE2=$(echo "$4 $5")
+#	echo "$DATE1    $DATE2"
+	# transform dates for further compairing
+	START_DATE=`date -d "$DATE1" +'%m%d'`
+	END_DATE=`date -d "$DATE2" +'%m%d'`
+#	echo "$START_DATE    $END_DATE"
+	if [ $START_DATE -gt $END_DATE ]
+	then 
+		echo "The end_DATE is earlier than start_DATE. Try again..."
+		kill  -TERM $$ 
+	fi
+	
+	PRINT=0
+	# reading file line by line
+	while read LINE
+	do
+		# if printing is allowed ....
+		if [ $PRINT -eq 1 ]  
+		then 
+			# and while havn't met end_DATE...  
+			if echo "$LINE" | tr -s ' ' | grep "$DATE2"; then break
+			else 
+				# printing needed part of file
+				echo "$LINE"
+				continue	
+			fi
+		fi
+
+		# if met start_DATE mention in the file ... 
+               	if echo "$LINE" | tr -s ' ' | grep "$DATE1"
+		then 
+			#allow printing and print the first mentioned line
+			echo "$LINE"
+			PRINT=1
+		fi
+       	done < $FILE
+
+fi
