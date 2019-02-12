@@ -13,3 +13,6 @@ which is needed to be rotated and creates log rotation rule.
 [process_terminate](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/process_terminate) script cheks the system processes and sends the TERM signal to the processes which use more RSS memory than N specified by user.
 
 [correct_IP](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/check_IP) script gets as an input possible IP-address and checks whether the user input string is the correct IP-address or not.
+
+[extract_day_interval](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/extract_date_interval) script processes log file and extracts only part of log according to the time interval specified by user.
+
