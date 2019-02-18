@@ -16,3 +16,4 @@ which is needed to be rotated and creates log rotation rule.
 
 [extract_day_interval](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/extract_date_interval) script processes log file and extracts only part of log according to the time interval specified by user.
 
+[find_extention](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/find_extentions) script counts files' extentions of all the files in the specified directory.
