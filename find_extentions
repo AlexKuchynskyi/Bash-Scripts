@@ -16,15 +16,15 @@ else
         while read LINE; do
 		# count files with no extention
                 if echo "$LINE" | grep -qEv "\."; then (( NO_EXT+=1 )); echo "$LINE"; continue; fi
-                if echo "$LINE" | grep -qE "^\.[A-Za-z0-9\_\,\!\"\'\/\$]+$"; 
-                then (( NO_EXT+=1 )); echo "$LINE"; continue; fi
+                if echo "$LINE" | grep -qE "^\.[A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]+$"; 
+		then (( NO_EXT+=1 )); echo "$LINE"; continue; fi
 		
-                # count files with extention
-                if echo "$LINE" | grep -qE "[A-Za-z0-9\_\,\!\"\'\/\$]\.[A-Za-z0-9\_\,\!\"\'\/\$]+$"; 
-                then (( EXT+=1 )); echo "$LINE"; continue; fi
+		# count files with extention
+                if echo "$LINE" | grep -qE "[A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]\.
+		[A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]+$"; 
+		then (( EXT+=1 )); echo "$LINE"; continue; fi
         done < file.tmp
         echo "NO_EXT= $NO_EXT"
         echo "EXT= $EXT"
 
 fi
-
