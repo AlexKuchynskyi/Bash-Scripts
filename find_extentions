@@ -10,18 +10,21 @@ then
 else
         DIR=$1
         echo "Directory to work: $DIR"
-#       find $DIR -type f -exec basename {} \; | grep -E '[[:punct:]]' | nl
-        #find $DIR -type f -exec basename {} \; | nl
         find $DIR -type f -exec basename {} \; > file.tmp
         NO_EXT=0
         EXT=0
         while read LINE; do
+		# count files with no extention
                 if echo "$LINE" | grep -qEv "\."; then (( NO_EXT+=1 )); echo "$LINE"; continue; fi
-                if echo "$LINE" | grep -qE "^\.[[:alnum:]]+$"; then (( NO_EXT+=1 )); echo "$LINE"; continue; fi
-                if echo "$LINE" | grep -qE "[[:alnum:]]\.[[:alnum:]]+$"; then (( EXT+=1 )); echo "$LINE"; continue; fi
+                if echo "$LINE" | grep -qE "^\.[A-Za-z0-9\_\,\!\"\'\/\$]+$"; 
+                then (( NO_EXT+=1 )); echo "$LINE"; continue; fi
+		
+                # count files with extention
+                if echo "$LINE" | grep -qE "[A-Za-z0-9\_\,\!\"\'\/\$]\.[A-Za-z0-9\_\,\!\"\'\/\$]+$"; 
+                then (( EXT+=1 )); echo "$LINE"; continue; fi
         done < file.tmp
         echo "NO_EXT= $NO_EXT"
         echo "EXT= $EXT"
-        # transform dates for further compairing
 
 fi
+
