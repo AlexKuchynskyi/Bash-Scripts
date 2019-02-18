@@ -13,18 +13,30 @@ else
         find $DIR -type f -exec basename {} \; > file.tmp
         NO_EXT=0
         EXT=0
+        declare -a ARR_NO_EXT
+        declare -A ARR_EXT
         while read LINE; do
-		# count files with no extention
+                # count files with no extention
                 if echo "$LINE" | grep -qEv "\."; then (( NO_EXT+=1 )); echo "$LINE"; continue; fi
-                if echo "$LINE" | grep -qE "^\.[A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]+$"; 
-		then (( NO_EXT+=1 )); echo "$LINE"; continue; fi
-		
-		# count files with extention
+                if echo "$LINE" | grep -qE "^\.[A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]+$";
+                then (( NO_EXT+=1 )); echo "$LINE"; continue; fi
+
+                # count files with extention
                 if echo "$LINE" | grep -qE "[A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]\.
-		[A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]+$"; 
-		then (( EXT+=1 )); echo "$LINE"; continue; fi
+                [A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]+$";
+                then
+                        (( EXT+=1 ))
+                        echo "$LINE"
+                        EXTENTION=$(echo "$LINE" | awk -F '.' '{print $NF}')
+                        echo "$EXTENTION"
+                        (( ARR_EXT[$EXTENTION]++ ))
+                        continue
+                fi
         done < file.tmp
         echo "NO_EXT= $NO_EXT"
         echo "EXT= $EXT"
+#       echo Associative array all keys: ${!ARR_EXT[@]}
+        # Looping through keys and values in an associative array
+        for K in "${!ARR_EXT[@]}"; do echo $K --- ${ARR_EXT[$K]}; done
 
 fi
