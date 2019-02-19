@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# script shows the list of file extentions
+# script shows the list of file extentions and counts
+# the amount of files with each extention in the 
+# directory and subdirectories
 
 # make sure about the correct input
 if [ -z $1 ]
