@@ -6,14 +6,11 @@
 if [ -z $1 ]
 then
         echo "Usage: script_name    path/to/directory"
-
 else
         DIR=$1
 	echo ''
-        if [ $DIR = '.' ]; then echo "Counting the extentions in the directory $PWD"
-	else  echo "Counting the extentions in the directory $DIR"; fi
+	echo "Counting the extentions in the directory `realpath $DIR`"
 	echo ''
-
         find $DIR -type f -exec basename {} \; > file.tmp
         NO_EXT=0
         EXT=0
@@ -38,7 +35,7 @@ else
         done < file.tmp
         echo "Total amount os files' extentions: $EXT"
         # Looping through keys and values in an associative array
-        for K in "${!ARR_EXT[@]}"; do echo "			$K --- ${ARR_EXT[$K]}"; done
+        for K in "${!ARR_EXT[@]}"; do echo "			$K - ${ARR_EXT[$K]}"; done
 	echo ''
 	echo "The amount of files with no extention: $NO_EXT"
 	echo ''
