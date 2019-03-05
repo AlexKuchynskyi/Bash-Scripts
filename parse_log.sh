@@ -4,39 +4,28 @@
 # shows the list of IPs and counts the attempts to connect from 
 # the each of them 
 
-#	echo ''
-#        find $DIR -type f -exec basename {} \; > file.tmp
-grep -oER "Calling-Station-Id \"([0-9]{1,3}\.){3}[0-9]{1,3}" /opt/interview/logs | awk -F '"' '{print $2}' > tmp_file
-#TOTAL_ADDR={ wc -l tmp_file }
-#echo "Total = $TOTAL_ADDR"
-#        EXT=0
-declare -A ARR_IP 	# declare associative array
-while read LINE; do
-                # count files with no extention
-echo "$LINE" 
+# find neccessary IP and write it to the file
+grep -oER "Calling-Station-Id \"([0-9]{1,3}\.){3}[0-9]{1,3}" /opt/interview/logs | cut -d '"' -f 2 > tmp_file
+#awk -F '"' '{print $2}' > tmp_file
 
-                # count files with extention
-#                if echo "$LINE" | grep -qE "[A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]\.
-#                [A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]+$";
-#                then
-#                        (( EXT+=1 ))
-                        #echo "$LINE"
-#                        EXTENTION=$(echo "$LINE" | awk -F '.' '{print $NF}')
-                        #echo "$EXTENTION"
-(( ARR_IP[$LINE]++ ))
-#                        continue
-#                fi
+declare -A ARR_IP 	# declare associative array
+
+# read file line by line
+while read LINE; do
+#echo "$LINE" 
+
+	# add IP as array's key and increment it
+	(( ARR_IP[$LINE]++ ))
 done < tmp_file
-#        echo "Total amount os files' extentions: $EXT"
-        # Looping through keys and values in an associative array
+
+echo "Total amount of connection attempts: " > log.parse
+echo "<Calling station IP> - <amount> " >> log.parse
+
+# Looping through keys and values in an associative array
 for K in "${!ARR_IP[@]}"; do 
-	echo "			$K - ${ARR_IP[$K]}" | tee -a log.parse
+	echo "$K - ${ARR_IP[$K]}" >> log.parse
 done
 
 # remove temporary file
 rm -f tmp_file
-#	echo ''
-#	echo "The amount of files with no extention: $NO_EXT"
-#	echo ''
 
-#fi
