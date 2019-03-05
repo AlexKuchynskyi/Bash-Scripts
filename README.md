@@ -12,7 +12,9 @@ Below is the list of scripts...
 [find_IP_MAC](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/find_IP_MAC) script gets a directory name as an input parameter and finds mentioning of IP-addresses in all the files (regular files only) located in the specified directory. If flag --mac is specified the script also finds mentioning of MAC-addresses. Results are written to the files. 
 
 [logrotate_conf](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/logrotate_conf) script gets a path to the log file 
-which is needed to be rotated and creates log rotation rule. 
+which is needed to be rotated and creates log rotation rule.  
+
+[parse_log](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/parse_log.sh) script parses specified file (may change to any) and shows the list of IPs and counts the attempts to connect from the each of them.
 
 [process_terminate](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/process_terminate) script cheks the system processes and sends the TERM signal to the processes which use more RSS memory than N specified by user.    
 
