@@ -14,7 +14,9 @@ Below is the list of scripts...
 [logrotate_conf](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/logrotate_conf) script gets a path to the log file 
 which is needed to be rotated and creates log rotation rule.  
 
-[parse_log](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/parse_log.sh) script parses specified file (may change to any) and shows the list of IPs and counts the attempts to connect from the each of them.
+[parse_log](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/parse_log.sh) script parses specified file (may change to any) and shows the list of IPs and counts the attempts to connect from the each of them.  
+
+[ping_check](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/ping_check.sh) script processes specified file which contains list of hosts (IPs or domain names) and checks their accessibility by ping. The output is: <Host_name (IP or domain) - packet loss(%)>. Input arguments are: file_name, packets quantity, packets interval. If no input arguments - script proposes default values.  
 
 [process_terminate](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/process_terminate) script cheks the system processes and sends the TERM signal to the processes which use more RSS memory than N specified by user.    
 
