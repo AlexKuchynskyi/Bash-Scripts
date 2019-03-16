@@ -3,6 +3,8 @@ Below is the list of scripts...
 
 [correct_IP](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/check_IP) script gets as an input possible IP-address and checks whether the user input string is the correct IP-address or not.  
 
+[count_lines](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/count_lines.sh) script counts lines in the list of files and returns list of files with the quantity of lines in each file and total number of files and lines as well.  
+
 [cron_conf](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/cron_conf) script creates cron's task for logrotate running to rotate specified by user log file each 2 minutes.  
 
 [extract_day_interval](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/extract_date_interval) script processes log file and extracts only part of log according to the time interval specified by user.
