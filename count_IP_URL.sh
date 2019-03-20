@@ -61,3 +61,7 @@ echo "The amount of URLs: "
 for K in "${!ARR_URL[@]}"; do 
 	echo "$K - ${ARR_URL[$K]}"
 done | sort -rn -k3 | head -n $LINES
+
+# delete temporary files
+rm -f tmp_IP
+rm -f tmp_url
