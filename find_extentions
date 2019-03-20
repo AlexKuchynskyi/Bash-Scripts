@@ -19,11 +19,12 @@ else
         declare -A ARR_EXT 	# declare associative array
         while read LINE; do
                 # count files with no extention
-                if echo "$LINE" | grep -qEv "\."; then (( NO_EXT+=1 )); continue; fi
+                if echo "$LINE" | grep -qEv "\."; then (( NO_EXT+=1 )); continue; fi # no '.' symbol, so no extention
+		# exclude hidden files ('.' is in teh begining of name)
                 if echo "$LINE" | grep -qE "^\.[A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]+$";
                 then (( NO_EXT+=1 )); fi
 
-                # count files with extention
+                # count files with extention, (anything'.'and anything till the end of line)
                 if echo "$LINE" | grep -qE "[A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]\.
                 [A-Za-z0-9\@\#\%\^\&\(\)\?\<\>\+\-\=\~\`\|\*\_\,\!\"\'\/\$]+$";
                 then
