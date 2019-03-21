@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# script gives folder name and checks if the files in it 
+# script takes folder name and checks if the files in it 
 # are archives (Gzip or Bzip). If so, script decompresses them,
 # if not - just skip the file
 
