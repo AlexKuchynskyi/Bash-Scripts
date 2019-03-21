@@ -3,6 +3,8 @@ Below is the list of scripts...
 
 [correct_IP](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/check_IP) script gets as an input possible IP-address and checks whether the user input string is the correct IP-address or not.  
 
+[count_IP_URL](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/count_IP_URL.sh) cript takes the log file to process and gives the most appeared IPs and URLs. The output amount may be specified (default are 5, i.e. 5 most often IPs and 5 most often URLs).  
+
 [count_lines](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/count_lines.sh) script counts lines in the list of files and returns list of files with the quantity of lines in each file and total number of files and lines as well.  
 
 [cron_conf](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/cron_conf) script creates cron's task for logrotate running to rotate specified by user log file each 2 minutes.  
@@ -24,4 +26,6 @@ which is needed to be rotated and creates log rotation rule.
 
 [process_terminate](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/process_terminate) script cheks the system processes and sends the TERM signal to the processes which use more RSS memory than N specified by user.    
 
-[PS_log_rotate](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/PS_log_rotate) script which checks running processes every 2 seconds and writes the information to the PS.log file. After each 5 iteration current PS.log file is compressed by gzip into the file PS.log1.gz. There're only 5 compressed logs in the system, afterwards PS.log5.gz file is removed and new PS.log1.gz file is added. 
+[PS_log_rotate](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/PS_log_rotate) script which checks running processes every 2 seconds and writes the information to the PS.log file. After each 5 iteration current PS.log file is compressed by gzip into the file PS.log1.gz. There're only 5 compressed logs in the system, afterwards PS.log5.gz file is removed and new PS.log1.gz file is added.  
+
+[unpack](https://github.com/AlexKuchynskyi/Bash-Scripts/edit/master/unpack.sh) script takes folder name and checks if the files in it are archives (Gzip or Bzip). If so, script decompresses them, if not - just skip the file.
