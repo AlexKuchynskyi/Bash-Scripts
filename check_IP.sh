@@ -9,10 +9,10 @@ then
         echo "Usage: script_name   IP-address"
 
 else
-        # get the input string and split it by the '.' delimeter
         VAR=$1
 
-        # checking for excesive dots
+        # checking for excesive dots. Sed removes everything except dots
+        # and awk counts dots (prints string's length)
         DOT_COUNTER=$(echo "$VAR"  | sed 's/[^.]//g' | awk '{ print length }')
 
         STRING=$(echo "$VAR" | tr . " ")
