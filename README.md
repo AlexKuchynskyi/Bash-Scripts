@@ -1,5 +1,7 @@
 # Bash-Scripts
-Below is the list of scripts...
+Below is the list of scripts...  
+
+[back_mask](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/back_mask.sh) script gets as an input possible IP-mask and returns back-mask if the inputed mask is valid  
 
 [correct_IP](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/check_IP) script gets as an input possible IP-address and checks whether the user input string is the correct IP-address or not.  
 
