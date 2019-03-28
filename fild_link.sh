@@ -18,7 +18,7 @@ else
     INODE=$(stat -c '%i' $1) 
     echo "Successfully created hard links... Inode= $INODE"
     echo "current path= $PWD/$1"
-    find / -inum $INODE  
+    find / -inum $INODE                             # show all the hardlinks  
     echo "================================="
     # '! -path' means except path...
     # so we find all the files with the specified inode
@@ -35,12 +35,9 @@ else
     echo "Successfully created syminks..."
     # find all the symlinks which point to the original file
     # BTW if specify the root directory as the directory to start from (/)
-    # the system comes to eternal loop and gives the error   !!!!!!!!!!!!!!!!!!  
-    find -L /root -samefile $PWD/$1  
+    # the system comes to eternal loop and gives the error   !!!!!!!!!!!!!!!!!! 
+    find -L /root -samefile $PWD/$1 #! -path "$PWD/$1"       # show all the symlinks
+    find -L /root -samefile $PWD/$1 ! -path "$PWD/$1" -exec rm -f {} \;   
     echo "================================="
-    # '! -path' means except path...
-    # so we find all the files with the specified inode
-    # except our input file and remove them
-    #find / -inum $INODE ! -path "$PWD/$1" -exec rm -f {} \;
-    #echo "Successfully removed all the hardlinks..."
+    echo "Successfully removed all the syminks..."
 fi
