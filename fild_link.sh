@@ -2,7 +2,8 @@
 
 # script gets file_name and creates multiple hardlinks to this file.
 # After that script finds all the files with the same inode as input file 
-# (looks for all the hardlinks) and deletes them.
+# (looks for all the hardlinks) and deletes them. Then script looks for all 
+# the symlinks to the specified file and deletes them.
 
 # make sure about correct input
 if [ -z $1 ]
