@@ -17,6 +17,8 @@ Below is the list of scripts...
 
 [find_IP_MAC](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/find_IP_MAC) script gets a directory name as an input parameter and finds mentioning of IP-addresses in all the files (regular files only) located in the specified directory. If flag --mac is specified the script also finds mentioning of MAC-addresses. Results are written to the files.  
 
+[find_link](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/fild_link.sh) script gets file_name and creates multiple hardlinks and softlinks to this file. After that script finds all the files with the same inode as input file (looks for all the hardlinks), then it looks for all the symlinks to the specified file and deletes them.  
+
 [ifdata_counter](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/ifdata_counter.sh) script shows the amount of received and transmitted data for the specified network interface. Each 10 seconds it shows delta (difference) for these parameters and writes it down to the log file.  
 
 [logrotate_conf](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/logrotate_conf) script gets a path to the log file 
