@@ -13,7 +13,7 @@ Below is the list of scripts...
 
 [extract_day_interval](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/extract_date_interval) script processes log file and extracts only part of log according to the time interval specified by user.
 
-[find_extention](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/find_extentions) shows the list of all the files' extentions and the amount of files with each extention in the specified directory and subdirectories.
+[find_extention](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/find_extentions.sh) shows the list of all the files' extentions and the amount of files with each extention in the specified directory and subdirectories.
 
 [find_IP_MAC](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/find_IP_MAC) script gets a directory name as an input parameter and finds mentioning of IP-addresses in all the files (regular files only) located in the specified directory. If flag --mac is specified the script also finds mentioning of MAC-addresses. Results are written to the files.  
 
