@@ -5,7 +5,7 @@
 # After each 5 iteration current PS.log file is compressed
 # by gzip into the file PS.log1.gz. There're only 5 
 # compressed logs in te system (PS.log1.gz, ..., PS.log5.gz).
-# If you doesn't want to see the comments output 
+# If you don't want to see the comments output 
 # change "| tee -a" to ">>" and write all the "echo "..." " commands
 # to the file (PS.log)
 
