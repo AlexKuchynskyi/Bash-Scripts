@@ -11,8 +11,8 @@ while [ "$START_PRCSTGLOAD" -eq 0 ]; do
         echo "`date '+%Y-%m-%d %H:%M:%S'` - checking if files are in the working directory..." >> prcFeedClusterJob_ctl.log
 
         if [ `ls -1 /data/prod/import/integrations/pricefeed/working/prc_stg*$(date +%Y%m%d).impex 2> >( while read line; do echo "$(date): ${line}"; done >> error.log) | wc -l ` -gt 0 ]; then
-        # "2> >( while read line; do echo "$(date): ${line}"; done >> error.log)" - this is redirecting to log file just to see possible errors
-        # this expression may be changed to "2>&/de/null"
+        # "2> >( while read line; do echo "$(date): ${line}"; done >> error.log)" - this is redirecting to log file 
+        # just to see possible errors; this expression may be changed to "2>&/dev/null"
                 echo -n "`date '+%Y-%m-%d %H:%M:%S'`" >> prcFeedClusterJob_ctl.log
                 echo "  - priceFeedClusterJob STARTED ................................................" >> prcFeedClusterJob_ctl.log
                 START_PRCSTGLOAD=1
