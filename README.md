@@ -2,6 +2,8 @@
 Below is the list of scripts...  
 
 [back_mask](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/back_mask.sh) script gets as an input possible IP-mask and returns back-mask if the inputed mask is valid  
+  
+[check_directory_files](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/check_directory_files.sh) script checks if a file is in one directory when file is present script considers that file processing has been started and checks if files are in another directory. When this (second) directory is empty script is finished.  
 
 [correct_IP](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/check_IP) script gets as an input possible IP-address and checks whether the user input string is the correct IP-address or not.  
 
