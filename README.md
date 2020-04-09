@@ -32,6 +32,8 @@ which is needed to be rotated and creates log rotation rule.
 
 [process_terminate](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/process_terminate) script cheks the system processes and sends the TERM signal to the processes which use more RSS memory than N specified by user.    
 
-[PS_log_rotate](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/PS_log_rotate) script which checks running processes every 2 seconds and writes the information to the PS.log file. After each 5 iteration current PS.log file is compressed by gzip into the file PS.log1.gz. There're only 5 compressed logs in the system, afterwards PS.log5.gz file is removed and new PS.log1.gz file is added.  
+[PS_log_rotate](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/PS_log_rotate) script which checks running processes every 2 seconds and writes the information to the PS.log file. After each 5 iteration current PS.log file is compressed by gzip into the file PS.log1.gz. There're only 5 compressed logs in the system, afterwards PS.log5.gz file is removed and new PS.log1.gz file is added. 
+
+[remove_trg_file](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/remove_trg_file.sh) script removes specified file at specified location. Set as cronJob.
 
 [unpack](https://github.com/AlexKuchynskyi/Bash-Scripts/edit/master/unpack.sh) script takes folder name and checks if the files in it are archives (Gzip or Bzip). If so, script decompresses them, if not - just skip the file.
