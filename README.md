@@ -36,4 +36,6 @@ which is needed to be rotated and creates log rotation rule.
 
 [remove_trg_file](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/remove_trg_file.sh) script removes specified file at specified location. Set as cronJob.
 
+[space_alert_monitor](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/space_monitor_alert.sh) monitors used space on specified location and sends an email notification if space usage exceeds specified threshold.
+
 [unpack](https://github.com/AlexKuchynskyi/Bash-Scripts/edit/master/unpack.sh) script takes folder name and checks if the files in it are archives (Gzip or Bzip). If so, script decompresses them, if not - just skip the file.
