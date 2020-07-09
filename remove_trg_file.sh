@@ -44,6 +44,12 @@ fi
 rm ${FILE_PATH}/${FILE_NAME}
 EXIT_STATUS=$?
 
+# Parse the result and status values from the received response
+        #RESPONSE_RESULT=`echo "cat //cronjob/result" | xmllint --shell ${RESPONSE_FILE} | sed '/^\/ >/d' | sed 's/<[^>]*.//g'`
+        #RESPONSE_STATUS=`echo "cat //cronjob/status" | xmllint --shell ${RESPONSE_FILE} | sed '/^\/ >/d' | sed 's/<[^>]*.//g'`
+        #RESPONSE_RESULT=`grep -oP "(?<=<result>).*(?=<\/result>)" ${RESPONSE_FILE}`
+        #RESPONSE_STATUS=`grep -oP "(?<=<status>).*(?=<\/status>)" ${RESPONSE_FILE}`
+
 # Check for errors
 if [ ${EXIT_STATUS} -ne 0 ]; then
 # If exit status is different from zero sript failed. Record error to log and end script.
