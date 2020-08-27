@@ -13,6 +13,8 @@ Below is the list of scripts...
 
 [cron_conf](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/cron_conf) script creates cron's task for logrotate running to rotate specified by user log file each 2 minutes.  
 
+[ETL_json_SQLite](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/ETL_json_SQLite.bash) performs ETL process. It collects all of the commits from GitHub API that have been made until a certain date, labels each commit as "Internal" or "External" (based on condition specified), and finally loads the commits in an SQLite database.
+
 [extract_day_interval](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/extract_date_interval) script processes log file and extracts only part of log according to the time interval specified by user.
 
 [find_extention](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/find_extentions.sh) shows the list of all the files' extentions and the amount of files with each extention in the specified directory and subdirectories.
