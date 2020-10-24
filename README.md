@@ -38,7 +38,7 @@ which is needed to be rotated and creates log rotation rule.
 
 [remove_trg_file](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/remove_trg_file.sh) script removes specified file at specified location. Set as cronJob.
 
-[select_from_DB_and_update_file](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/select_from_DB_and_update_txt_file.sh) script connects to db, makes query and updates text file accordingly
+[select_from_DB_and_update_file](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/select_from_DB_and_update_txt_file.sh) script connects to db, makes query and updates text file accordingly.
 
 [space_alert_monitor](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/space_monitor_alert.sh) monitors used space on specified location and sends an email notification if space usage exceeds specified threshold.
 
