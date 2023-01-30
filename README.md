@@ -5,7 +5,7 @@ Below is the list of scripts...
   
 [check_directory_files](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/check_directory_files.sh) script checks if a file is in one directory when file is present script considers that file processing has been started and checks if files are in another directory. When this (second) directory is empty script is finished.  
 
-[correct_IP](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/check_IP) script gets as an input possible IP-address and checks whether the user input string is the correct IP-address or not.  
+[correct_IP](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/check_IP.sh) script gets as an input possible IP-address and checks whether the user input string is the correct IP-address or not.  
 
 [count_IP_URL](https://github.com/AlexKuchynskyi/Bash-Scripts/blob/master/count_IP_URL.sh) cript takes the log file to process and gives the most appeared IPs and URLs. The output amount may be specified (default are 5, i.e. 5 most often IPs and 5 most often URLs).  
 
